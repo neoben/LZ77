@@ -1,0 +1,53 @@
+Overview:
+========
+LZ77: an LZ77 dictionary based compressor using a sliding window and a lookahead buffer.
+
+Author:
+======
+Carmine Benedetto
+
+Website: http://www.carminebenedetto.net
+Email: carmine.benedetto[at]gmail.com
+
+Build:
+=====
+From the main directory type the command:
+	make
+
+Usage:
+=====
+./lz77 [options]
+
+Required Options:
+	-c 		COMPRESSION MODE	
+	-d		DECOMPRESSION MODE
+	-i [file]	INPUT FILE PATH
+	-o [file]	OUTPUT FILE PATH
+
+Additional Options:
+	-w [size]	WINDOW SIZE
+	-l [size]	LOOKAHEAD BUFFER SIZE
+
+Usage Examples:
+==============
+./lz77 -c -i file.txt -o file.lz
+./lz77 -d -i file.lz -o filedec.txt
+
+./lz77 -c -i file.txt -o file.lz -w 1024 -l 64
+./lz77 -d -i file.lz -o filedec.txt -w 1024 -l 64
+
+Note:
+====
+The default values for the window size and the lookahead buffer size are:
+	w = 4096
+	l = 256
+
+Scripts:
+=======
+To run the tool you can use the compression or decompression script too.
+
+To run the compression script edit the 'c' bash script and type from the main directory:
+	./c
+
+To run the decompression script edit the 'd' bash script and type from the main directory:
+	./d
